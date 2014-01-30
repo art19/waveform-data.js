@@ -46,18 +46,18 @@ module.exports = function (grunt) {
 
     karma: {
       options: {
-        configFile: "karma.conf.js"
+        configFile: "karma.conf.js",
+        browsers: [
+          'Chrome',
+          'Firefox',
+          'Safari'
+        ]
       },
       unit: {
         singleRun: true
       },
       debug: {
         background: true
-      },
-      ci: {
-        singleRun: true,
-        reporters: ["dots"],
-        browsers: ["PhantomJS"]
       }
 
     },
@@ -93,7 +93,7 @@ module.exports = function (grunt) {
       },
       lib_test: {
         files: "<%= jshint.lib_test.src %>",
-        tasks: ["jshint:lib_test", "build", "karma:unit:run"]
+        tasks: ["jshint:lib_test", "karma:unit:run"]
       }
     }
   });
@@ -105,7 +105,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-jsdoc-md");
   grunt.loadNpmTasks("grunt-karma");
 
-  grunt.registerTask("default", ["test"]);
-  grunt.registerTask("test", ["jshint", "karma:ci"]);         //single run
   grunt.registerTask("debug", ["karma:debug", "watch"]);       //continuous debug
 };

@@ -1,12 +1,26 @@
 language: node_js
 node_js:
   - "0.10"
+
 notifications:
   email:
     recipients:
       - thomas.parisot@bbc.co.uk
     on_failure: change
     on_success: never
+
 before_script:
   - npm install -g grunt-cli
   - npm run build
+
+addons:
+  sauce_connect:
+    username:
+      secure: "rFmAh5YJcU2t7T0IP71iQU+8iLVP1tsu/rTgfdqfOwbAelRKkPrPyauz1C8iFKgA56vedvjWnsWGqBS89DlOnUc5pyEdaZI0KB5fLP7lY6vStI6PqKOsyN1Zmq19Um9uBRRodmcASX8G13JpfXNARynMpSPf3kJZcT/ZB0i/jUs="
+    access_key:
+      secure: "I3Q2fasNHEeFWONPaZ92weq2DwlCnN+/mmaQ+z2nDZOtsUk2SBszf+Jf5Qy4sXSw7chf0x3CfR/mNvwavHzeJodUYLCOWIfAKSDjh1U6wsyZN1gEHgjRzcJXdpJzXX7tblRrtOfg4J/RwRfWNg+uUiDPXPe5zaOzXN7yBbZNlRo="
+
+cache:
+  directories:
+    - node_modules
+    - bower_components
