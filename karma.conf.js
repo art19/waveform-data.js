@@ -15,9 +15,6 @@ module.exports = function(config){
     browserify: {
       external: ['dist/waveform-data.min.js']
     },
-    plugins: [
-      'karma-*'
-    ],
     exclude: [],
     reporters: isCI ? 'dots' : 'progress',
     port: 8080,
