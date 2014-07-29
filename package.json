@@ -71,6 +71,6 @@
     "testling": "^1.6.1"
   },
   "dependencies": {
-    "audio-context": "~0.1.0"
+    "audio-context": "^0.1.0"
   }
 }
